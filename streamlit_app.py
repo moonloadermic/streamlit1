@@ -15,10 +15,11 @@ urls = [
 "https://streamlit.io/"
 ]
 
-r = requests.get(url)
+
 
 for i, url in enumerate(urls, start=1):
-	print(f"{i}, url, r.status_code")
+	r = requests.get(url)
+	print(f"{i}, {url}, r.status_code")
 	time.sleep(8)
 
 #def job():
