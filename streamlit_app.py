@@ -18,7 +18,7 @@ urls = [
 r = requests.get(url)
 
 for i, url in enumerate(urls, start=1):
-    print(f"{i}, {url}, r.status_code")
+	print(f"{i}, {url}, r.status_code")
 	time.sleep(8)
 
 #def job():
