@@ -10,6 +10,7 @@ r = requests.get('https://w3schools.com')
 print(r.status_code)
 print(r.url)
 st.write(r.status_code)
+st.markdown(r.url)
 
 
 
