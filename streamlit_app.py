@@ -16,12 +16,16 @@ urls = [
 ]
 
 
-
-for i, url in enumerate(urls, start=1):
-	r = requests.get(url)
-	print(f"{i}, {url}", r.status_code)
-	st.write(f"{i}, {url}", r.status_code)
-	time.sleep(8)
+def job1():
+	for i, url in enumerate(urls, start=1):
+		r = requests.get(url)
+		print(f"{i}, {url}", r.status_code)
+		st.write(f"{i}, {url}", r.status_code)
+		time.sleep(10)
+schedule.every(60).seconds.do(job1)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
 #def job():
 #	r = requests.get('https://www.w3schools.com/')
