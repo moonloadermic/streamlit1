@@ -1,6 +1,6 @@
 import time
 import streamlit as st
-
+import requests
 """
 ## NO
 
@@ -14,24 +14,13 @@ Fork this repo, and edit `/streamlit_app.py` to customize this app to your heart
 """
 
 st.title("Test Selenium")
+st.markdown("*Streamlit* is **really** ***cool***.")
 
-with st.echo():
-    from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
-    from selenium.webdriver.chrome.service import Service
-    from webdriver_manager.chrome import ChromeDriverManager
+r = requests.get('https://w3schools.com')
+print(r.status_code)
+print(r.url)
+st.write(r.status_code)
 
-    @st.experimental_singleton
-    def get_driver():
-        return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-    options = Options()
-    options.add_argument('--disable-gpu')
-    options.add_argument('--headless')
-
-    driver = get_driver()
-    driver.get('https://github.com/')
-    time.sleep(2)
-    st.write(driver.title)
 
 
