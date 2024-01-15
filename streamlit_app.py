@@ -13,7 +13,7 @@ def job():
 	r = requests.get('https://www.w3schools.com/')
 	return r.status_code
 	
-schedule.every(3).seconds.do(job)
+schedule.every(60).seconds.do(job)
 
 while True:
     schedule.run_pending()
