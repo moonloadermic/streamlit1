@@ -11,7 +11,7 @@ st.markdown("*Streamlit* is **really** ***cool***.")
 
 def job():
 	r = requests.get('https://www.w3schools.com/')
-	print("website status: ", r.status_code)
+	return r.status_code)
 	
 schedule.every(3).seconds.do(job)
 
