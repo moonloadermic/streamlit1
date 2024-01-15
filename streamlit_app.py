@@ -20,7 +20,7 @@ urls = [
 for i, url in enumerate(urls, start=1):
 	r = requests.get(url)
 	print(f"{i}, {url}", r.status_code)
-	st.write(f"{i}, {url}", r.status_code")
+	st.write(f"{i}, {url}", r.status_code)
 	time.sleep(8)
 
 #def job():
